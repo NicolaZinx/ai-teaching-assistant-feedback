@@ -1,432 +1,413 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI助教互动体验与批判性分析</title>
-    <style>
-        body {
-            font-family: 'Microsoft YaHei', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f7fa;
-        }
+<table style="width:100%; border-collapse:collapse; font-family:Arial, sans-serif;">
+  <tr style="background-color:#4472C4; color:white;">
+    <th colspan="2" style="padding:10px; text-align:center; font-size:16px; border:1px solid #2F528F;">AI助教互动体验与批判性分析作业</th>
+  </tr>
+  
+  <tr style="background-color:#E6EFF9;">
+    <td style="padding:8px; border:1px solid #9CC2E5; width:20%;">学生姓名</td>
+    <td style="padding:8px; border:1px solid #9CC2E5;"></td>
+  </tr>
+  
+  <tr style="background-color:#E6EFF9;">
+    <td style="padding:8px; border:1px solid #9CC2E5;">学号</td>
+    <td style="padding:8px; border:1px solid #9CC2E5;"></td>
+  </tr>
+  
+  <tr style="background-color:#E6EFF9;">
+    <td style="padding:8px; border:1px solid #9CC2E5;">班级</td>
+    <td style="padding:8px; border:1px solid #9CC2E5;"></td>
+  </tr>
+  
+  <tr style="background-color:#E6EFF9;">
+    <td style="padding:8px; border:1px solid #9CC2E5;">提交日期</td>
+    <td style="padding:8px; border:1px solid #9CC2E5;"></td>
+  </tr>
+  
+  <tr style="background-color:#E6EFF9;">
+    <td style="padding:8px; border:1px solid #9CC2E5;">使用的AI助教</td>
+    <td style="padding:8px; border:1px solid #9CC2E5;">(如：deepseek/文心一言等)</td>
+  </tr>
+  
+  <tr style="background-color:#4472C4; color:white;">
+    <th colspan="2" style="padding:10px; text-align:center; border:1px solid #2F528F;">第一部分：优质AI回答分析（3条）</th>
+  </tr>
+  
+  <tr>
+    <td colspan="2" style="padding:0;">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr style="background-color:#BDD7EE;">
+          <th style="padding:8px; border:1px solid #9CC2E5; width:20%;">对话编号</th>
+          <th style="padding:8px; border:1px solid #9CC2E5;">1</th>
+        </tr>
         
-        h1, h2, h3 {
-            color: #2c3e50;
-        }
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">我的提问</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:60px;"></td>
+        </tr>
         
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #3498db;
-        }
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">AI的回答</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:100px;"></td>
+        </tr>
         
-        .section {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">优质点分析</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
         
-        .section-header {
-            background-color: #3498db;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">质量评分(1-5分)</td>
+          <td style="padding:8px; border:1px solid #9CC2E5;"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <!-- 重复两次对话模板 -->
+  <tr>
+    <td colspan="2" style="padding:0;">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr style="background-color:#BDD7EE;">
+          <th style="padding:8px; border:1px solid #9CC2E5; width:20%;">对话编号</th>
+          <th style="padding:8px; border:1px solid #9CC2E5;">2</th>
+        </tr>
         
-        .dialog-container {
-            background-color: #eef5fd;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-left: 4px solid #3498db;
-        }
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">我的提问</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:60px;"></td>
+        </tr>
         
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">AI的回答</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:100px;"></td>
+        </tr>
         
-        input[type="text"], 
-        input[type="number"],
-        textarea, 
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">优质点分析</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
         
-        textarea {
-            height: 100px;
-            resize: vertical;
-        }
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">质量评分(1-5分)</td>
+          <td style="padding:8px; border:1px solid #9CC2E5;"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr>
+    <td colspan="2" style="padding:0;">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr style="background-color:#BDD7EE;">
+          <th style="padding:8px; border:1px solid #9CC2E5; width:20%;">对话编号</th>
+          <th style="padding:8px; border:1px solid #9CC2E5;">3</th>
+        </tr>
         
-        button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            display: block;
-            margin: 30px auto;
-            width: 200px;
-            transition: background-color 0.3s;
-        }
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">我的提问</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:60px;"></td>
+        </tr>
         
-        button:hover {
-            background-color: #2980b9;
-        }
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">AI的回答</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:100px;"></td>
+        </tr>
         
-        .tips {
-            background-color: #f8f9fa;
-            border-left: 4px solid #6c757d;
-            padding: 15px;
-            margin-top: 20px;
-        }
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">优质点分析</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
         
-        .required::after {
-            content: " *";
-            color: red;
-        }
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">质量评分(1-5分)</td>
+          <td style="padding:8px; border:1px solid #9CC2E5;"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr style="background-color:#4472C4; color:white;">
+    <th colspan="2" style="padding:10px; text-align:center; border:1px solid #2F528F;">第二部分：存在不足的AI回答分析（3条）</th>
+  </tr>
+  
+  <!-- 不足回答分析模板，重复3次 -->
+  <tr>
+    <td colspan="2" style="padding:0;">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr style="background-color:#BDD7EE;">
+          <th style="padding:8px; border:1px solid #9CC2E5; width:20%;">对话编号</th>
+          <th style="padding:8px; border:1px solid #9CC2E5;">1</th>
+        </tr>
         
-        .success-message {
-            display: none;
-            background-color: #d4edda;
-            color: #155724;
-            padding: 15px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <div class="success-message" id="successMessage">
-        表单已成功提交！感谢您的参与。
-    </div>
-
-    <h1>AI助教互动体验与批判性分析</h1>
-    
-    <form id="aiAnalysisForm" action="https://formspree.io/f/YOUR_FORMSPREE_ENDPOINT" method="POST">
-        <!-- 基本信息部分 -->
-        <div class="section">
-            <div class="section-header">
-                <h2>基本信息</h2>
-            </div>
-            
-            <div>
-                <label for="studentName" class="required">学生姓名</label>
-                <input type="text" id="studentName" name="studentName" required>
-                
-                <label for="studentId" class="required">学号</label>
-                <input type="text" id="studentId" name="studentId" required>
-                
-                <label for="className" class="required">班级</label>
-                <input type="text" id="className" name="className" required>
-                
-                <label for="submitDate" class="required">提交日期</label>
-                <input type="date" id="submitDate" name="submitDate" required>
-                
-                <label for="aiAssistant" class="required">使用的AI助教</label>
-                <select id="aiAssistant" name="aiAssistant" required>
-                    <option value="">-- 请选择 --</option>
-                    <option value="ChatGPT">ChatGPT</option>
-                    <option value="Claude">Claude</option>
-                    <option value="文心一言">文心一言</option>
-                    <option value="讯飞星火">讯飞星火</option>
-                    <option value="通义千问">通义千问</option>
-                    <option value="其他">其他</option>
-                </select>
-                <div id="otherAiContainer" style="display: none;">
-                    <label for="otherAi">请说明使用的其他AI</label>
-                    <input type="text" id="otherAi" name="otherAi">
-                </div>
-            </div>
-        </div>
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">我的提问</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:60px;"></td>
+        </tr>
         
-        <!-- 第一部分：优质AI回答分析 -->
-        <div class="section">
-            <div class="section-header">
-                <h2>第一部分：优质AI回答分析（3条）</h2>
-            </div>
-            
-            <!-- 对话1 -->
-            <div class="dialog-container">
-                <h3>对话1</h3>
-                <label for="goodQuestion1" class="required">我的提问</label>
-                <textarea id="goodQuestion1" name="goodQuestion1" required></textarea>
-                
-                <label for="goodAnswer1" class="required">AI的回答</label>
-                <textarea id="goodAnswer1" name="goodAnswer1" required></textarea>
-                
-                <label for="goodAnalysis1" class="required">优质点分析</label>
-                <textarea id="goodAnalysis1" name="goodAnalysis1" required></textarea>
-                
-                <label for="goodRating1" class="required">质量评分(1-5分)</label>
-                <input type="number" id="goodRating1" name="goodRating1" min="1" max="5" required>
-            </div>
-            
-            <!-- 对话2 -->
-            <div class="dialog-container">
-                <h3>对话2</h3>
-                <label for="goodQuestion2" class="required">我的提问</label>
-                <textarea id="goodQuestion2" name="goodQuestion2" required></textarea>
-                
-                <label for="goodAnswer2" class="required">AI的回答</label>
-                <textarea id="goodAnswer2" name="goodAnswer2" required></textarea>
-                
-                <label for="goodAnalysis2" class="required">优质点分析</label>
-                <textarea id="goodAnalysis2" name="goodAnalysis2" required></textarea>
-                
-                <label for="goodRating2" class="required">质量评分(1-5分)</label>
-                <input type="number" id="goodRating2" name="goodRating2" min="1" max="5" required>
-            </div>
-            
-            <!-- 对话3 -->
-            <div class="dialog-container">
-                <h3>对话3</h3>
-                <label for="goodQuestion3" class="required">我的提问</label>
-                <textarea id="goodQuestion3" name="goodQuestion3" required></textarea>
-                
-                <label for="goodAnswer3" class="required">AI的回答</label>
-                <textarea id="goodAnswer3" name="goodAnswer3" required></textarea>
-                
-                <label for="goodAnalysis3" class="required">优质点分析</label>
-                <textarea id="goodAnalysis3" name="goodAnalysis3" required></textarea>
-                
-                <label for="goodRating3" class="required">质量评分(1-5分)</label>
-                <input type="number" id="goodRating3" name="goodRating3" min="1" max="5" required>
-            </div>
-        </div>
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">AI的回答</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:100px;"></td>
+        </tr>
         
-        <!-- 第二部分：存在不足的AI回答分析 -->
-        <div class="section">
-            <div class="section-header">
-                <h2>第二部分：存在不足的AI回答分析（3条）</h2>
-            </div>
-            
-            <!-- 对话1 -->
-            <div class="dialog-container">
-                <h3>对话1</h3>
-                <label for="badQuestion1" class="required">我的提问</label>
-                <textarea id="badQuestion1" name="badQuestion1" required></textarea>
-                
-                <label for="badAnswer1" class="required">AI的回答</label>
-                <textarea id="badAnswer1" name="badAnswer1" required></textarea>
-                
-                <label for="badAnalysis1" class="required">不足之处分析</label>
-                <textarea id="badAnalysis1" name="badAnalysis1" required></textarea>
-                
-                <label for="improveSuggestion1" class="required">改进建议</label>
-                <textarea id="improveSuggestion1" name="improveSuggestion1" required></textarea>
-                
-                <label for="badRating1" class="required">质量评分(1-5分)</label>
-                <input type="number" id="badRating1" name="badRating1" min="1" max="5" required>
-            </div>
-            
-            <!-- 对话2 -->
-            <div class="dialog-container">
-                <h3>对话2</h3>
-                <label for="badQuestion2" class="required">我的提问</label>
-                <textarea id="badQuestion2" name="badQuestion2" required></textarea>
-                
-                <label for="badAnswer2" class="required">AI的回答</label>
-                <textarea id="badAnswer2" name="badAnswer2" required></textarea>
-                
-                <label for="badAnalysis2" class="required">不足之处分析</label>
-                <textarea id="badAnalysis2" name="badAnalysis2" required></textarea>
-                
-                <label for="improveSuggestion2" class="required">改进建议</label>
-                <textarea id="improveSuggestion2" name="improveSuggestion2" required></textarea>
-                
-                <label for="badRating2" class="required">质量评分(1-5分)</label>
-                <input type="number" id="badRating2" name="badRating2" min="1" max="5" required>
-            </div>
-            
-            <!-- 对话3 -->
-            <div class="dialog-container">
-                <h3>对话3</h3>
-                <label for="badQuestion3" class="required">我的提问</label>
-                <textarea id="badQuestion3" name="badQuestion3" required></textarea>
-                
-                <label for="badAnswer3" class="required">AI的回答</label>
-                <textarea id="badAnswer3" name="badAnswer3" required></textarea>
-                
-                <label for="badAnalysis3" class="required">不足之处分析</label>
-                <textarea id="badAnalysis3" name="badAnalysis3" required></textarea>
-                
-                <label for="improveSuggestion3" class="required">改进建议</label>
-                <textarea id="improveSuggestion3" name="improveSuggestion3" required></textarea>
-                
-                <label for="badRating3" class="required">质量评分(1-5分)</label>
-                <input type="number" id="badRating3" name="badRating3" min="1" max="5" required>
-            </div>
-        </div>
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">不足之处分析</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
         
-        <!-- 第三部分：明显错误的AI回答分析 -->
-        <div class="section">
-            <div class="section-header">
-                <h2>第三部分：明显错误的AI回答分析（3条）</h2>
-            </div>
-            
-            <!-- 对话1 -->
-            <div class="dialog-container">
-                <h3>对话1</h3>
-                <label for="wrongQuestion1" class="required">我的提问</label>
-                <textarea id="wrongQuestion1" name="wrongQuestion1" required></textarea>
-                
-                <label for="wrongAnswer1" class="required">AI的回答</label>
-                <textarea id="wrongAnswer1" name="wrongAnswer1" required></textarea>
-                
-                <label for="errorPoints1" class="required">错误之处指出</label>
-                <textarea id="errorPoints1" name="errorPoints1" required></textarea>
-                
-                <label for="correctInfo1" class="required">正确信息补充</label>
-                <textarea id="correctInfo1" name="correctInfo1" required></textarea>
-                
-                <label for="errorAnalysis1" class="required">错误原因分析</label>
-                <textarea id="errorAnalysis1" name="errorAnalysis1" required></textarea>
-            </div>
-            
-            <!-- 对话2 -->
-            <div class="dialog-container">
-                <h3>对话2</h3>
-                <label for="wrongQuestion2" class="required">我的提问</label>
-                <textarea id="wrongQuestion2" name="wrongQuestion2" required></textarea>
-                
-                <label for="wrongAnswer2" class="required">AI的回答</label>
-                <textarea id="wrongAnswer2" name="wrongAnswer2" required></textarea>
-                
-                <label for="errorPoints2" class="required">错误之处指出</label>
-                <textarea id="errorPoints2" name="errorPoints2" required></textarea>
-                
-                <label for="correctInfo2" class="required">正确信息补充</label>
-                <textarea id="correctInfo2" name="correctInfo2" required></textarea>
-                
-                <label for="errorAnalysis2" class="required">错误原因分析</label>
-                <textarea id="errorAnalysis2" name="errorAnalysis2" required></textarea>
-            </div>
-            
-            <!-- 对话3 -->
-            <div class="dialog-container">
-                <h3>对话3</h3>
-                <label for="wrongQuestion3" class="required">我的提问</label>
-                <textarea id="wrongQuestion3" name="wrongQuestion3" required></textarea>
-                
-                <label for="wrongAnswer3" class="required">AI的回答</label>
-                <textarea id="wrongAnswer3" name="wrongAnswer3" required></textarea>
-                
-                <label for="errorPoints3" class="required">错误之处指出</label>
-                <textarea id="errorPoints3" name="errorPoints3" required></textarea>
-                
-                <label for="correctInfo3" class="required">正确信息补充</label>
-                <textarea id="correctInfo3" name="correctInfo3" required></textarea>
-                
-                <label for="errorAnalysis3" class="required">错误原因分析</label>
-                <textarea id="errorAnalysis3" name="errorAnalysis3" required></textarea>
-            </div>
-        </div>
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">改进建议</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
         
-        <!-- 第四部分：总结反思 -->
-        <div class="section">
-            <div class="section-header">
-                <h2>第四部分：总结反思</h2>
-            </div>
-            
-            <label for="aiExperience" class="required">AI使用心得体会</label>
-            <textarea id="aiExperience" name="aiExperience" required></textarea>
-            
-            <label for="aiCriticism" class="required">对AI的质疑与"抬杠"</label>
-            <textarea id="aiCriticism" name="aiCriticism" required></textarea>
-            
-            <label for="aiEducationThoughts" class="required">我对AI在教育中应用的思考</label>
-            <textarea id="aiEducationThoughts" name="aiEducationThoughts" required></textarea>
-        </div>
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">质量评分(1-5分)</td>
+          <td style="padding:8px; border:1px solid #9CC2E5;"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr>
+    <td colspan="2" style="padding:0;">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr style="background-color:#BDD7EE;">
+          <th style="padding:8px; border:1px solid #9CC2E5; width:20%;">对话编号</th>
+          <th style="padding:8px; border:1px solid #9CC2E5;">2</th>
+        </tr>
         
-        <!-- 提示与建议 -->
-        <div class="section">
-            <div class="section-header">
-                <h2>提示与建议</h2>
-            </div>
-            
-            <div class="tips">
-                <h3>与AI互动的建议：</h3>
-                <ol>
-                    <li>尝试不同类型的问题：事实性问题、开放性问题、创造性问题等</li>
-                    <li>挑战AI的限制，如提出需要最新信息的问题、跨学科问题等</li>
-                    <li>尝试让AI解释复杂概念或进行多步骤推理</li>
-                    <li>观察AI处理模糊问题或含义不明确的提问的能力</li>
-                </ol>
-                
-                <h3>评价AI回答的维度：</h3>
-                <ol>
-                    <li>准确性：信息是否正确、完整</li>
-                    <li>相关性：是否切中问题核心</li>
-                    <li>深度：分析是否深入、多角度</li>
-                    <li>清晰度：表达是否清晰、结构是否合理</li>
-                    <li>创新性：是否提供独特见解或新颖思路</li>
-                </ol>
-            </div>
-        </div>
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">我的提问</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:60px;"></td>
+        </tr>
         
-        <button type="submit">提交</button>
-    </form>
-
-    <script>
-        // 处理其他AI选项显示
-        document.getElementById('aiAssistant').addEventListener('change', function() {
-            const otherAiContainer = document.getElementById('otherAiContainer');
-            if (this.value === '其他') {
-                otherAiContainer.style.display = 'block';
-            } else {
-                otherAiContainer.style.display = 'none';
-            }
-        });
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">AI的回答</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:100px;"></td>
+        </tr>
         
-        // 表单提交处理
-        document.getElementById('aiAnalysisForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const form = this;
-            const formData = new FormData(form);
-            
-            fetch(form.action, {
-                method: form.method,
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            })
-            .then(response => {
-                if (response.ok) {
-                    // 显示成功消息
-                    document.getElementById('successMessage').style.display = 'block';
-                    // 滚动到顶部查看成功消息
-                    window.scrollTo(0, 0);
-                    // 重置表单
-                    form.reset();
-                } else {
-                    throw new Error('表单提交失败');
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('提交失败，请稍后再试');
-            });
-        });
-    </script>
-</body>
-</html>
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">不足之处分析</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">改进建议</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">质量评分(1-5分)</td>
+          <td style="padding:8px; border:1px solid #9CC2E5;"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr>
+    <td colspan="2" style="padding:0;">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr style="background-color:#BDD7EE;">
+          <th style="padding:8px; border:1px solid #9CC2E5; width:20%;">对话编号</th>
+          <th style="padding:8px; border:1px solid #9CC2E5;">3</th>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">我的提问</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:60px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">AI的回答</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:100px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">不足之处分析</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">改进建议</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">质量评分(1-5分)</td>
+          <td style="padding:8px; border:1px solid #9CC2E5;"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr style="background-color:#4472C4; color:white;">
+    <th colspan="2" style="padding:10px; text-align:center; border:1px solid #2F528F;">第三部分：明显错误的AI回答分析（3条）</th>
+  </tr>
+  
+  <!-- 错误回答分析模板，重复3次 -->
+  <tr>
+    <td colspan="2" style="padding:0;">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr style="background-color:#BDD7EE;">
+          <th style="padding:8px; border:1px solid #9CC2E5; width:20%;">对话编号</th>
+          <th style="padding:8px; border:1px solid #9CC2E5;">1</th>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">我的提问</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:60px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">AI的回答</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:100px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">错误之处指出</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">正确信息补充</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">错误原因分析</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr>
+    <td colspan="2" style="padding:0;">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr style="background-color:#BDD7EE;">
+          <th style="padding:8px; border:1px solid #9CC2E5; width:20%;">对话编号</th>
+          <th style="padding:8px; border:1px solid #9CC2E5;">2</th>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">我的提问</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:60px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">AI的回答</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:100px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">错误之处指出</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">正确信息补充</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">错误原因分析</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr>
+    <td colspan="2" style="padding:0;">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr style="background-color:#BDD7EE;">
+          <th style="padding:8px; border:1px solid #9CC2E5; width:20%;">对话编号</th>
+          <th style="padding:8px; border:1px solid #9CC2E5;">3</th>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">我的提问</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:60px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">AI的回答</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:100px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">错误之处指出</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">正确信息补充</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td style="padding:8px; border:1px solid #9CC2E5;">错误原因分析</td>
+          <td style="padding:8px; border:1px solid #9CC2E5; min-height:80px;"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr style="background-color:#4472C4; color:white;">
+    <th colspan="2" style="padding:10px; text-align:center; border:1px solid #2F528F;">第四部分：总结反思</th>
+  </tr>
+  
+  <tr>
+    <td colspan="2" style="padding:0;">
+      <table style="width:100%; border-collapse:collapse;">
+        <tr style="background-color:#BDD7EE;">
+          <th colspan="2" style="padding:8px; border:1px solid #9CC2E5; text-align:center;">AI使用心得体会</th>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td colspan="2" style="padding:8px; border:1px solid #9CC2E5; min-height:150px;"></td>
+        </tr>
+        
+        <tr style="background-color:#BDD7EE;">
+          <th colspan="2" style="padding:8px; border:1px solid #9CC2E5; text-align:center;">对AI的质疑与"抬杠"</th>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td colspan="2" style="padding:8px; border:1px solid #9CC2E5; min-height:150px;"></td>
+        </tr>
+        
+        <tr style="background-color:#BDD7EE;">
+          <th colspan="2" style="padding:8px; border:1px solid #9CC2E5; text-align:center;">我对AI在教育中应用的思考</th>
+        </tr>
+        
+        <tr style="background-color:#E6EFF9;">
+          <td colspan="2" style="padding:8px; border:1px solid #9CC2E5; min-height:150px;"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr style="background-color:#4472C4; color:white;">
+    <th colspan="2" style="padding:10px; text-align:center; border:1px solid #2F528F;">提示与建议</th>
+  </tr>
+  
+  <tr style="background-color:#E6EFF9;">
+    <td colspan="2" style="padding:8px; border:1px solid #9CC2E5;">
+      <p><strong>与AI互动的建议：</strong></p>
+      <ol>
+        <li>尝试不同类型的问题：事实性问题、开放性问题、创造性问题等</li>
+        <li>挑战AI的限制，如提出需要最新信息的问题、跨学科问题等</li>
+        <li>尝试让AI解释复杂概念或进行多步骤推理</li>
+        <li>观察AI处理模糊问题或含义不明确的提问的能力</li>
+      </ol>
+      
+      <p><strong>评价AI回答的维度：</strong></p>
+      <ol>
+        <li>准确性：信息是否正确、完整</li>
+        <li>相关性：是否切中问题核心</li>
+        <li>深度：分析是否深入、多角度</li>
+        <li>清晰度：表达是否清晰、结构是否合理</li>
+        <li>创新性：是否提供独特见解或新颖思路</li>
+      </ol>
+    </td>
+  </tr>
+</table>
